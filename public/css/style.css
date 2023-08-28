@@ -270,6 +270,7 @@ main .main-container .info {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    margin: 0 20px;
 }
 
 main .main-container .info .about span:nth-child(1) {
@@ -277,10 +278,12 @@ main .main-container .info .about span:nth-child(1) {
     font-size: var(--body-text);
 }
 
-main .main-container .info .about h2 {
+main .main-container .info .about p {
     all: unset;
+    display: block;
     color: var(--secondary-white);
     font-size: var(--headline-text);
+    white-space: pre-wrap;
 }
 
 main .main-container .info .about p:nth-child(3) {
@@ -302,8 +305,15 @@ main .main-container .info .link .git-link {
     color: var(--accent-green);
     margin-top: 30px;
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     height: 21px;
+}
+
+main .main-container .info .link a:last-child {
+    display: block;
+    word-break: break-all;
+    width: 300px;
 }
 
 main .main-container .info .link .git-link span {
@@ -387,6 +397,10 @@ main .footer .github a:hover i {
         display: none;
     }
 
+    main .main-container .info {
+        width: 100%;
+    }
+
     main header .container ul {
         display: none;
     }
@@ -432,8 +446,27 @@ main .footer .github a:hover i {
     }
 }
 
-@media (max-width: 402px) {
+@media (max-width: 400px) {
     main header .container .logo {
         border: none;
+    }
+
+    main .main-container .info .link a:last-child {
+        width: auto;
+    }
+}
+
+@media (max-width: 580px) {
+    main .footer {
+        display: none;
+    }
+
+    main .main-container .info .about p:nth-child(3) {
+        color: var(--accent-green);
+        font-size: 25px;
+    }
+
+    main .main-container .info .link {
+        margin-top: 40%;
     }
 }
