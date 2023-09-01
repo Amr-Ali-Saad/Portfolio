@@ -46,19 +46,25 @@ a {
 
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Fira Code', monospace;
     background-color: var(--primary-darkest);
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 10px;
     /* background-image: linear-gradient(45deg, var(--gradient-green) 35%, var(--secondary-purpul) 55%, var(--primary-dark)); */
     background-size: 300% 300%;
     animation: color infinite 9s ease-in-out;
     -webkit-animation: color infinite 9s ease-in-out;
+}
+
+body:last-child {
+    margin-bottom: 40px;
 }
 
 @keyframes color {
@@ -81,6 +87,7 @@ main {
     height: 90vh;
     width: 90vw;
     margin: 0 20px;
+    margin-top: 40px;
     background-color: var(--primary-darker);
     border: var(--main-border);
     border-radius: 8px;
@@ -120,13 +127,15 @@ main header .container .logo {
     border-right: 1px solid var(--primary-border);
 }
 
-main header .container ul {
+main header .container ul,
+main header .burger-menu-active ul {
     list-style: none;
     display: flex;
     height: 100%;
 }
 
-main header .container ul li {
+main header .container ul li,
+main header .burger-menu-active ul li {
     width: 150px;
     display: flex;
     align-items: center;
@@ -136,7 +145,8 @@ main header .container ul li {
     border-right: var(--main-border);
 }
 
-main header .container ul li a {
+main header .container ul li a,
+main header .burger-menu-active ul li a {
     color: var(--secondary-gray) !important;
     text-decoration: none;
     transition: color 0.2s linear;
@@ -146,26 +156,31 @@ main header .container ul li a {
     -o-transition: color 0.2s linear;
 }
 
-main header .container ul .contact {
+main header .container ul .contact,
+main header .burger-menu-active ul .contact {
     position: absolute;
     right: 0;
     border-right: none;
     border-left: var(--main-border);
 }
 
-main header .container ul li a:hover {
+main header .container ul li a:hover,
+main header .burger-menu-active ul li a:hover {
     color: white !important;
 }
 
-main header .container .active a {
+main header .container .active a,
+main header .burger-menu-active .active a {
     color: #fff !important;
 }
 
-main header .container .active {
+main header .container .active,
+main header .burger-menu-active .active {
     position: relative;
 }
 
-main header .container .active::before {
+main header .container .active::before,
+main header .burger-menu-active .active::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -177,6 +192,17 @@ main header .container .active::before {
 
 main header .container .burger-menu {
     display: none;
+    cursor: pointer;
+    position: relative;
+}
+
+main header .container .burger-menu:hover span {
+    background-color: var(--secondary-white);
+    transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -ms-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
 }
 
 main header .container .burger-menu span {
@@ -184,6 +210,96 @@ main header .container .burger-menu span {
     height: 2px;
     border-radius: 10px;
     background-color: var(--secondary-gray);
+    transition: background-color 0.3s ease;
+    -webkit-transition: 0.3s background-color ease;
+    -moz-transition: 0.3s background-color ease;
+    -ms-transition: 0.3s background-color ease;
+    -o-transition: 0.3s background-color ease;
+}
+
+main header .container .burger-menu.to-close {
+    right: 45px;
+}
+
+main header .container .burger-menu.to-close span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+main header .container .burger-menu.to-close span:nth-child(2) {
+    display: none;
+}
+
+main header .container .burger-menu.to-close span:nth-child(1) {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+main header .container .burger-menu.to-close span:nth-child(3) {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+
+main header .burger-menu-active {
+    transition: right 0.3s ease-in-out;
+    position: absolute;
+    width: 90vw;
+    height: calc(90vh - 57px);
+    background-color: var(--primary-darker);
+    z-index: 15;
+    border-top: var(--main-border);
+    right: calc(-100% + -10px);
+    -webkit-transition: right 0.3s ease-in-out;
+    -moz-transition: right 0.3s ease-in-out;
+    -ms-transition: right 0.3s ease-in-out;
+    -o-transition: right 0.3s ease-in-out;
+}
+
+main header .burger-menu-active.active {
+    right: 0;
+}
+
+main header .burger-menu-active ul {
+    flex-direction: column;
+    height: auto;
+}
+
+main header .burger-menu-active ul li {
+    height: 55px;
+}
+
+main header .burger-menu-active ul li {
+    position: relative !important;
+    border: none !important;
+    border-bottom: var(--main-border) !important;
+    border-right: var(--main-border) !important;
+    width: 100%;
+    justify-content: flex-start
+}
+
+main header .burger-menu-active ul li a {
+    margin-left: 15px;
+}
+
+main header .burger-menu-active .footer .github p {
+    display: none;
+}
+
+main header .burger-menu-active .footer .github a {
+    border: none;
+    margin-right: 7px;
 }
 
 /* Main Content Styles */
@@ -193,7 +309,7 @@ main .main-container {
     justify-content: center;
     align-items: center;
     gap: 40px;
-    height: 100%;
+    height: calc(100% - 110px);
     width: 100%;
     position: relative;
 }
@@ -352,6 +468,10 @@ main .footer .github a {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+main .footer .find div a svg {
+    color: var(--secondary-gray) !important;
 
 }
 
@@ -446,7 +566,7 @@ main .footer .github a:hover i {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 422px) {
     main header .container .logo {
         border: none;
     }
@@ -454,19 +574,23 @@ main .footer .github a:hover i {
     main .main-container .info .link a:last-child {
         width: auto;
     }
+
+    main>.footer {
+        display: none;
+    }
 }
 
 @media (max-width: 580px) {
-    main .footer {
-        display: none;
+    main .main-container {
+        height: calc(100% - 57px);
     }
 
     main .main-container .info .about p:nth-child(3) {
         color: var(--accent-green);
-        font-size: 25px;
+        font-size: 20px;
     }
 
     main .main-container .info .link {
-        margin-top: 40%;
+        margin-top: 10vh;
     }
 }
