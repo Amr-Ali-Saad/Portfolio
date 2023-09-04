@@ -61,6 +61,7 @@ body {
     background-size: 300% 300%;
     animation: color infinite 9s ease-in-out;
     -webkit-animation: color infinite 9s ease-in-out;
+    color: var(--secondary-gray)
 }
 
 body:last-child {
@@ -511,8 +512,487 @@ main .footer .github a:hover i {
     -o-transform: scale(1.2);
 }
 
+
+/* About Me Styles */
+.about-container {
+    display: flex;
+    color: var(--secondary-gray);
+}
+
+.about-container aside div svg {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.about-container aside .person svg {
+    opacity: 1;
+}
+
+.about-container .nums {
+    padding: 0 15px;
+}
+
+.about-container .nums,
+.about-container .text,
+.about-container aside {
+    padding-top: 20px;
+    border-right: var(--main-border);
+}
+
+.about-container aside {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 20px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.about-container .nums,
+.about-container .text {
+    line-height: 40px;
+    font-size: var(--body-text);
+}
+
+.about-container .text {
+    padding: 0 15px;
+    width: 50%;
+    color: var(--accent-green);
+}
+
+.about-container .text .header {
+    all: unset;
+    font-size: 24px;
+    color: #4AC5F5;
+    font-weight: 500;
+}
+
+.about-container .text .tech-container {
+    padding-top: 20px;
+    display: flex;
+    gap: 10%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-gray)
+}
+
+.about-container .text,
+.about-container .nums {
+    padding-top: 10px;
+}
+
+.about-container .text .tech-container svg {
+    font-size: 60px;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+}
+
+.about-container .text .tech-container div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container .text .tech-container .html svg {
+    color: #E5532D;
+    background-color: #e5522d37;
+}
+
+.about-container .text .tech-container .css svg {
+    color: #299CF8;
+    background-color: #299bf848;
+}
+
+.about-container .text .tech-container .bootstrap svg {
+    color: #7818F7;
+    background-color: #7918f74a;
+}
+
+.about-container .text .tech-container .git svg {
+    color: #F05639;
+    background-color: #f057393f;
+}
+
+.about-container .text .tech-container .js svg {
+    color: #F7DF1E;
+    background-color: #f7de1e3c;
+}
+
+.about-container .text .tech-container .github svg {
+    color: #fff;
+    background-color: #00000037;
+}
+
+.about-container .text .tech-container .plan svg {
+    color: #43d9ad;
+    background-color: #43d9ac47;
+}
+
+.about-container .seprator {
+    height: 90vh;
+    width: 30px;
+    border-right: var(--main-border);
+    position: relative;
+}
+
+.about-container .seprator::after {
+    content: "";
+    width: 70%;
+    height: 15px;
+    background-color: var(--secondary-gray);
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+
+.about-container .snippets,
+.about-container .text {
+    width: calc(50% - (61px + 51px + 30px));
+}
+
+.about-container .snippets {
+    padding: 15px 3%;
+}
+
+.about-container .snippets .post {
+    width: 100%;
+    margin-top: 5vh;
+}
+
+.about-container .snippets .post .header {
+    position: relative;
+}
+
+.about-container .snippets .post .header,
+.about-container .snippets .post .header .info-btns,
+.about-container .snippets .post .header .info-btns div,
+.about-container .snippets .post .header .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: left;
+}
+
+.about-container .snippets .post .header .profile {
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+.about-container .snippets .post .header img {
+    border-radius: 50%;
+    width: 36px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.about-container .snippets .post .header .profile .username {
+    font-weight: bolder;
+    color: var(--gradient-purpul);
+}
+
+.about-container .snippets .post .header .info-btns {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.about-container .snippets .post .code {
+    margin-top: 10px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    position: relative;
+}
+
+.about-container .snippets .post .code img:nth-child(2) {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    width: calc(100% - 50px)
+}
+
+.about-container .snippets .post .code img:nth-child(1) {
+    position: relative;
+    width: 100%;
+}
+
+/* Project Section */
+
+.project-container {
+    display: flex;
+    height: 100%;
+}
+
+.project-container aside {
+    width: 20%;
+    border-right: var(--main-border);
+    min-width: 190px;
+    height: 100%;
+}
+
+.project-container aside .title {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px 0;
+    border-top: var(--main-border);
+    border-bottom: var(--main-border);
+    padding-left: 15px;
+    transition: color ease-in-out 0.3s;
+    -webkit-transition: color ease-in-out 0.3s;
+    -moz-transition: color ease-in-out 0.3s;
+    -ms-transition: color ease-in-out 0.3s;
+    -o-transition: color ease-in-out 0.3s;
+}
+
+.project-container aside .title:hover {
+    color: var(--secondary-white);
+}
+
+.project-container aside .title.collapse~.langs {
+    height: 0px;
+    padding: 0;
+}
+
+.project-container aside .title svg {
+    transition: transform ease-in-out 0.3s;
+    -webkit-transition: transform ease-in-out 0.3s;
+    -moz-transition: transform ease-in-out 0.3s;
+    -ms-transition: transform ease-in-out 0.3s;
+    -o-transition: transform ease-in-out 0.3s;
+}
+
+.project-container aside .title.collapse svg {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+}
+
+.project-container aside .langs {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    overflow: hidden;
+    transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+}
+
+.project-container aside .langs label {
+    display: flex;
+    align-items: center;
+}
+
+.project-container aside .langs label {
+    gap: 7px;
+}
+
+.project-container aside .langs label img,
+.project-container aside .langs label svg {
+    font-size: var(--body-text);
+    width: var(--body-text);
+    margin-left: 45px;
+}
+
+.project-container aside .langs label p {
+    display: inline;
+}
+
+.project-container aside .langs .container {
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.project-container aside .langs .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.project-container aside .langs .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: var(--body-text);
+    width: var(--body-text);
+    background-color: transparent;
+    border: 1px solid var(--secondary-gray);
+    border-radius: 4px;
+    transition: background-color ease 0.3s;
+    -webkit-transition: background-color ease 0.3s;
+    -moz-transition: background-color ease 0.3s;
+    -ms-transition: background-color ease 0.3s;
+    -o-transition: background-color ease 0.3s;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+/* On mouse-over, add a grey background color */
+.project-container aside .langs .container:hover input~.checkmark {
+    outline: 3px solid #607b966a;
+}
+
+/* When the checkbox is checked, add a blue background */
+.project-container aside .langs .container input:checked~.checkmark {
+    background-color: var(--secondary-gray);
+}
+
+.project-container aside .langs .container input:checked~p,
+.project-container aside .langs .container input:checked~img,
+.project-container aside .langs .container input:checked~svg {
+    color: var(--secondary-gray);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.project-container aside .langs .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    transition: background-color ease 0.3s;
+}
+
+/* Show the checkmark when checked */
+.project-container aside .langs .container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.project-container aside .langs .container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.project-container .results-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    height: calc(100% - 110px - 40px);
+    align-content: flex-start;
+}
+
+.project-container .results .img-holder {
+    position: relative;
+    width: calc(100% + 60px);
+    left: -30px;
+    overflow: hidden;
+    height: 150px;
+}
+
+.project-container .results .img-holder img {
+    width: 100%;
+}
+
+.project-container .results .result .title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 0;
+}
+
+.project-container .results .result .title .project-num {
+    font-weight: bold;
+    color: var(--secondary-purpul);
+}
+
+.project-container .results .result .preview {
+    padding: 30px;
+    height: 234.82px;
+    width: calc(348.35px - 60px);
+    background-color: var(--primary-dark);
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border: var(--main-border);
+    overflow: hidden;
+}
+
+.project-container .results .result .preview button {
+    width: fit-content;
+    padding: 10px;
+    background-color: #1C2B3A;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-transition: 0.3s all ease;
+    -moz-transition: 0.3s all ease;
+    -ms-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+}
+
+.project-container .results .result .preview button:hover {
+    background-color: #293d52;
+}
+
+.project-container .results .result .preview button a {
+    color: var(--secondary-white);
+    font-family: 'Fira Code', monospace;
+}
+
 /* Main Media Screens */
-@media (max-width: 1300px) {
+@media (max-width: 1375px) {
     main .main-container .imgs {
         display: none;
     }
@@ -520,6 +1000,32 @@ main .footer .github a:hover i {
     main .main-container .info {
         width: 100%;
     }
+
+    .about-container .text .tech-container {
+        gap: 5%;
+    }
+
+    .about-container .text .tech-container svg {
+        font-size: 50px;
+        padding: 6px;
+        width: 50px;
+    }
+
+    .about-container .seprator {
+        display: none;
+    }
+
+    .about-container .snippets,
+    .about-container .text {
+        width: calc(50% - 61px);
+    }
+
+    .about-container .snippets {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 1020px) {
 
     main header .container ul {
         display: none;
@@ -537,6 +1043,24 @@ main .footer .github a:hover i {
         -moz-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         -o-transform: translateY(-50%);
+    }
+
+    .about-container .snippets {
+        display: none;
+    }
+
+    .about-container .text {
+        width: calc(100% - (61px + 51px));
+    }
+
+    .about-container .text .tech-container {
+        gap: 10%;
+    }
+
+    .about-container .text .tech-container svg {
+        font-size: 60px;
+        padding: 10px;
+        width: 60px;
     }
 }
 
@@ -564,6 +1088,42 @@ main .footer .github a:hover i {
         width: 230px;
         height: 350px;
     }
+
+    .about-container .text .tech-container {
+        gap: 5%;
+    }
+
+    .about-container .text .tech-container svg {
+        font-size: 50px;
+        padding: 6px;
+        width: 50px;
+    }
+}
+
+@media (max-width: 580px) {
+
+    .about-container .nums,
+    .about-container aside {
+        display: none;
+    }
+
+    .about-container .text {
+        border: none;
+        width: 100%;
+    }
+
+    main .main-container {
+        height: calc(100% - 57px);
+    }
+
+    main .main-container .info .about p:nth-child(3) {
+        color: var(--accent-green);
+        font-size: 20px;
+    }
+
+    main .main-container .info .link {
+        margin-top: 10vh;
+    }
 }
 
 @media (max-width: 422px) {
@@ -578,19 +1138,24 @@ main .footer .github a:hover i {
     main>.footer {
         display: none;
     }
+
+    .about-container .text {
+        line-height: 30px;
+    }
+
+    .about-container .text .header {
+        font-size: var(--body-text);
+    }
 }
 
-@media (max-width: 580px) {
-    main .main-container {
-        height: calc(100% - 57px);
+@media (max-width: 370px) {
+    .about-container .text .tech-container svg {
+        font-size: 40px;
+        padding: 4px;
+        width: 40px;
     }
 
-    main .main-container .info .about p:nth-child(3) {
-        color: var(--accent-green);
-        font-size: 20px;
-    }
-
-    main .main-container .info .link {
-        margin-top: 10vh;
+    .about-container .text .tech-container div {
+        font-size: var(--labes);
     }
 }

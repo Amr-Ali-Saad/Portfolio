@@ -86,8 +86,9 @@ class View {
             let sectionHeader = section.children[0];
             sectionHeader.id = section.id;
             let sectionsTitles = [
-                ...section.querySelectorAll("header .container .links li a"),
+                ...section.querySelectorAll("header .links li a"),
             ];
+
             sectionsTitles.forEach((title) => {
                 title.style.cursor = "pointer";
                 title.href = "#" + title.textContent;
@@ -139,6 +140,15 @@ class View {
         let sections = [...document.querySelectorAll("main")];
         sections.forEach((section) => {
             section.insertAdjacentHTML("beforeend", markup);
+        });
+    }
+
+    handleCollapseLangs() {
+        let collapse = document.querySelector(
+            ".project-container aside .title"
+        );
+        collapse.addEventListener("click", () => {
+            collapse.classList.toggle("collapse");
         });
     }
 }

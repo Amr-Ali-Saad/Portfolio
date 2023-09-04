@@ -13,8 +13,13 @@ function controllInjecting() {
     View.injectFooter();
 }
 
+function controlCollapse() {
+    View.handleCollapseLangs();
+}
+
 function init() {
     controllInjecting();
     controlMenu();
+    controlCollapse();
 }
 init();
