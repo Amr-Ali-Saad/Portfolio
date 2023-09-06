@@ -144,12 +144,12 @@ class View {
     }
 
     handleCollapseLangs() {
-        let collapse = document.querySelector(
-            ".project-container aside .title"
+        let collapse = [...document.querySelectorAll("aside .title")];
+        collapse.forEach((coll) =>
+            coll.addEventListener("click", () => {
+                coll.classList.toggle("collapse");
+            })
         );
-        collapse.addEventListener("click", () => {
-            collapse.classList.toggle("collapse");
-        });
     }
 }
 export default new View();

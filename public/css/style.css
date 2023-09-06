@@ -740,19 +740,22 @@ main .footer .github a:hover i {
 
 /* Project Section */
 
-.project-container {
+.project-container,
+.contactme-container {
     display: flex;
     height: 100%;
 }
 
-.project-container aside {
+.project-container aside,
+.contactme-container aside {
     width: 20%;
     border-right: var(--main-border);
-    min-width: 190px;
+    min-width: 290px;
     height: 100%;
 }
 
-.project-container aside .title {
+.project-container aside .title,
+.contactme-container aside .title {
     display: flex;
     gap: 10px;
     cursor: pointer;
@@ -767,16 +770,19 @@ main .footer .github a:hover i {
     -o-transition: color ease-in-out 0.3s;
 }
 
-.project-container aside .title:hover {
+.project-container aside .title:hover,
+.contactme-container aside .title:hover {
     color: var(--secondary-white);
 }
 
-.project-container aside .title.collapse~.langs {
+.project-container aside .title.collapse~.langs,
+.contactme-container aside .title.collapse~.list {
     height: 0px;
     padding: 0;
 }
 
-.project-container aside .title svg {
+.project-container aside .title svg,
+.contactme-container aside .title svg {
     transition: transform ease-in-out 0.3s;
     -webkit-transition: transform ease-in-out 0.3s;
     -moz-transition: transform ease-in-out 0.3s;
@@ -784,7 +790,8 @@ main .footer .github a:hover i {
     -o-transition: transform ease-in-out 0.3s;
 }
 
-.project-container aside .title.collapse svg {
+.project-container aside .title.collapse svg,
+.contactme-container aside .title.collapse svg {
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
@@ -792,14 +799,13 @@ main .footer .github a:hover i {
     -o-transform: rotate(-90deg);
 }
 
-.project-container aside .langs {
+.project-container aside .langs,
+.contactme-container aside .list {
     margin: 10px 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-left: 15px;
-    padding-bottom: 10px;
-    padding-right: 15px;
+    padding: 3px 15px 10px 15px;
     overflow: hidden;
     transition: all ease 0.3s;
     -webkit-transition: all ease 0.3s;
@@ -963,7 +969,8 @@ main .footer .github a:hover i {
     overflow: hidden;
 }
 
-.project-container .results .result .preview button {
+.project-container .results .result .preview button,
+.contactme-container .send-form form button {
     width: fit-content;
     padding: 10px;
     background-color: #1C2B3A;
@@ -982,13 +989,108 @@ main .footer .github a:hover i {
     -o-transition: 0.3s all ease;
 }
 
-.project-container .results .result .preview button:hover {
+.project-container .results .result .preview button:hover,
+.contactme-container .send-form form button:hover {
     background-color: #293d52;
 }
 
-.project-container .results .result .preview button a {
+.project-container .results .result .preview button a,
+.contactme-container .send-form form button {
     color: var(--secondary-white);
     font-family: 'Fira Code', monospace;
+}
+
+/* Cantact me section styles */
+
+/* .contactme-container{
+    --code-width: 
+} */
+
+.contactme-container aside .list a {
+    color: var(--secondary-gray);
+    cursor: pointer;
+    transition: color 0.2s ease;
+    -webkit-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
+    -ms-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+}
+
+.contactme-container aside .list a:hover {
+    color: var(--secondary-white);
+}
+
+.contactme-container aside .list {
+    overflow: hidden;
+    transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+}
+
+.contactme-container .send-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    position: relative;
+    height: calc(100% - (57px + 52px));
+}
+
+.contactme-container .send-form form {
+    margin-top: 15vh;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    width: 75%;
+}
+
+.contactme-container .send-form form label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.contactme-container .send-form form label input,
+.contactme-container .send-form form label textarea {
+    padding: 10px 15px;
+    background-color: var(--primary-dark) !important;
+    border-radius: 8px;
+    color: var(--secondary-gray);
+    border: var(--main-border);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    font-family: unset;
+}
+
+.contactme-container .send-form form label input:focus,
+.contactme-container .send-form form label textarea:focus {
+    outline: none;
+}
+
+.contactme-container .send-form form label textarea {
+    resize: none;
+    height: 100px;
+}
+
+.contactme-container .code {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    position: relative;
+    height: calc(100% - (57px + 52px));
+    gap: 15px;
+    border-left: var(--main-border);
+    padding: 0 calc(20px + 3%);
+}
+
+.contactme-container .code img {
+    height: 25%;
+    margin-top: 15vh;
 }
 
 /* Main Media Screens */
@@ -1062,6 +1164,10 @@ main .footer .github a:hover i {
         padding: 10px;
         width: 60px;
     }
+
+    .contactme-container .code {
+        display: none;
+    }
 }
 
 @media (max-width: 783px) {
@@ -1098,6 +1204,10 @@ main .footer .github a:hover i {
         padding: 6px;
         width: 50px;
     }
+
+    .project-container .results .result .preview {
+        width: calc(348.35px - 110px);
+    }
 }
 
 @media (max-width: 580px) {
@@ -1123,6 +1233,54 @@ main .footer .github a:hover i {
 
     main .main-container .info .link {
         margin-top: 10vh;
+    }
+
+    .project-container {
+        flex-direction: column;
+    }
+
+    .project-container aside {
+        height: fit-content;
+        border: none;
+        width: 100%;
+        border-bottom: var(--main-border);
+    }
+
+    #_projects {
+        height: auto;
+    }
+
+    .project-container .results-container {
+        padding-bottom: 75px;
+    }
+
+    #_projects .container .logo {
+        padding: 20px 0;
+        padding-left: 20px;
+    }
+
+    .project-container aside .title.collapse~.langs {
+        padding-top: 0;
+        border: 0;
+    }
+
+    .project-container aside {
+        border: none;
+    }
+
+    .contactme-container {
+        flex-direction: column;
+    }
+
+    .contactme-container aside {
+        min-width: max-content;
+        border: none;
+        width: 100%;
+        height: auto;
+    }
+
+    .contactme-container .send-form form {
+        margin: 0;
     }
 }
 
@@ -1157,5 +1315,14 @@ main .footer .github a:hover i {
 
     .about-container .text .tech-container div {
         font-size: var(--labes);
+    }
+
+    .project-container .results .result .preview {
+        width: calc(348.35px - 140px);
+    }
+
+    .project-container .results-container {
+        padding: 0;
+        padding-bottom: 10px;
     }
 }
